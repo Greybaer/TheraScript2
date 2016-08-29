@@ -48,6 +48,7 @@ class RxGeneratorViewController: UIViewController, MFMessageComposeViewControlle
     @IBOutlet var RxView: UIView!
     @IBOutlet weak var visits: UILabel!
     @IBOutlet weak var report: UILabel!
+    @IBOutlet weak var rxInstructions: UILabel!
     
     //Transmission buttons
     @IBOutlet weak var printRx: UIBarButtonItem!
@@ -159,11 +160,35 @@ class RxGeneratorViewController: UIViewController, MFMessageComposeViewControlle
                 dxLabel1.text = dxArray[0]
             }
             
-            
             //Populate the prescription
             visits.text = String(Int(TSClient.sharedInstance().prescription.visits))
             report.text = TSClient.sharedInstance().prescription.report ? "Yes" : "No"
 
+            //Create a text object, and place it in the UITextfield
+            var rxString: String = ""
+            
+            //Look at the flags and add the text for each on that's set
+            if TSClient.sharedInstance().prescription.modalities{
+                rxString = rxString + TSClient.sharedInstance().prescriptionString.modalities + "\n"
+            }
+            if TSClient.sharedInstance().prescription.conditioning{
+                rxString = rxString + TSClient.sharedInstance().prescriptionString.modalities + "\n"
+            }
+            if TSClient.sharedInstance().prescription.coreStab{
+                rxString = rxString + TSClient.sharedInstance().prescriptionString.coreStab + "\n"
+            }
+            if TSClient.sharedInstance().prescription.manualTherapy{
+                rxString = rxString + TSClient.sharedInstance().prescriptionString.manualTherapy + "\n"
+            }
+            if TSClient.sharedInstance().prescription.poolTherapy{
+                rxString = rxString + TSClient.sharedInstance().prescriptionString.poolTherapy + "\n"
+            }
+            if TSClient.sharedInstance().prescription.neckSchool{
+                rxString = rxString + TSClient.sharedInstance().prescriptionString.neckSchool + "\n"
+            }
+            if TSClient.sharedInstance().prescription.backSchool{
+                rxString = rxString + TSClient.sharedInstance().prescriptionString.backSchool + "\n"
+            }
 /*
             //Checkmark city!
             //Values are the inverse of the saved state

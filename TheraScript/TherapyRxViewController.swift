@@ -30,12 +30,13 @@ class TherapyRxViewController: UITableViewController {
     @IBOutlet weak var poolTherapy: UITableViewCell!
     @IBOutlet weak var neckSchool: UITableViewCell!
     @IBOutlet weak var backSchool: UITableViewCell!
-    @IBOutlet weak var cHardCollar: UITableViewCell!
+    /*
     @IBOutlet weak var cSoftCollar: UITableViewCell!
     @IBOutlet weak var lso: UITableViewCell!
     @IBOutlet weak var tlso: UITableViewCell!
     @IBOutlet weak var ctlso: UITableViewCell!
     @IBOutlet weak var tns: UITableViewCell!
+ */
     
     
     override func viewDidLoad() {
@@ -182,7 +183,8 @@ class TherapyRxViewController: UITableViewController {
         }else{
             backSchool.accessoryType = UITableViewCellAccessoryType.None
         }
-       if TSClient.sharedInstance().prescription.cSoftCollar{
+        //These have never been used, so out they go. Adding a freeform special instruction section which should cover these if they are ever needed.
+       /*if TSClient.sharedInstance().prescription.cSoftCollar{
             cHardCollar.accessoryType = UITableViewCellAccessoryType.Checkmark
         }else{
             cHardCollar.accessoryType = UITableViewCellAccessoryType.None
@@ -213,6 +215,7 @@ class TherapyRxViewController: UITableViewController {
         }else{
             tns.accessoryType = UITableViewCellAccessoryType.None
         }
+         */
     }//getRxInfo
     
     //***************************************************
@@ -275,7 +278,7 @@ class TherapyRxViewController: UITableViewController {
         }else{
             TSClient.sharedInstance().prescription.backSchool = false
         }
-
+        /*
         if cSoftCollar.accessoryType == UITableViewCellAccessoryType.Checkmark{
             TSClient.sharedInstance().prescription.cSoftCollar = true
         }else{
@@ -306,6 +309,7 @@ class TherapyRxViewController: UITableViewController {
         }else{
             TSClient.sharedInstance().prescription.tns = false
         }
+ */
     }//setRxInfo
     
 }//class

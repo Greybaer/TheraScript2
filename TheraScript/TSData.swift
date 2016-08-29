@@ -104,26 +104,22 @@ extension TSClient{
     }//Diagnosis
     
     //Prescription Data
+    //Eventually this should move to a separate class, and be customizable
     struct Prescription{
         var visits: Double = 0.0
         var report: Bool = false
         //If we accepted a prescription trip this flag
         var rxSelected: Bool = false
-        //From here down we have a flag/description pair
+        //Freeform instruction text
+        var specialInstrutions: String = ""
+        //The above variables must always exist. Anything below will be customizable
         var modalities: Bool = false
-        var modalityString: String  = "Modalities"
         var conditioning: Bool = false
-        var conditioningString : String = "Conditioning"
         var coreStab: Bool = false
-        var coreStabString : String = "Core Stabilization"
         var manualTherapy: Bool = false
-        var manuaTherapyString: String = "Manual Therapy"
         var poolTherapy: Bool = false
-        var poolTherapyString : String = "Pool Therapy"
         var neckSchool: Bool = false
-        var neckSchoolString : String = "Neck School"
         var backSchool: Bool = false
-        var backSchoolString : String = "Back School"
         //I've never used thes in a year of testing so out they go
         /*
         var cSoftCollar: Bool = false
@@ -134,6 +130,17 @@ extension TSClient{
         var tns: Bool = false
          */
     }//Prescription
+    
+    //Struct of treatment strings to display if the treatment is chosen
+    struct PrescriptionString{
+        var modalities: String  = "Modalities"
+        var conditioning : String = "Conditioning"
+        var coreStab : String = "Core Stabilization"
+        var manualTherapy: String = "Manual Therapy"
+        var poolTherapy : String = "Pool Therapy"
+        var neckSchool : String = "Neck School"
+        var backSchool : String = "Back School"
+    }//PrescriptionString
 
     //Path to the save location of the map region data
     var providerFilePath: String {

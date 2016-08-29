@@ -38,6 +38,9 @@ class TSClient: NSObject{
     
     //Therapy Prescription
     var prescription = Prescription()
+    
+    //Prescription Strings
+    var prescriptionString = PrescriptionString()
 
     //The URL Session
     var session: NSURLSession

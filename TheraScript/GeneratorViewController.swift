@@ -160,12 +160,14 @@ class GeneratorViewController: UIViewController, MFMessageComposeViewControllerD
             pool.hidden = !TSClient.sharedInstance().prescription.poolTherapy
             neckSchool.hidden = !TSClient.sharedInstance().prescription.neckSchool
             backSchool.hidden = !TSClient.sharedInstance().prescription.backSchool
+            /*
             LSO.hidden = !TSClient.sharedInstance().prescription.lso
             TLSO.hidden = !TSClient.sharedInstance().prescription.tlso
             CTLSO.hidden = !TSClient.sharedInstance().prescription.ctlso
             TNS.hidden = !TSClient.sharedInstance().prescription.tns
             cSoftCollar.hidden = !TSClient.sharedInstance().prescription.cSoftCollar
             cHardCollar.hidden = !TSClient.sharedInstance().prescription.cHardCollar
+            */
         }//if
     }//viewWillAppear
     
