@@ -9,7 +9,7 @@
 import UIKit
 import MessageUI
 
-class RxGeneratorViewController: UIViewController, MFMessageComposeViewControllerDelegate {
+class RxGeneratorViewController: UITableViewController, MFMessageComposeViewControllerDelegate {
     
     //Variables
     //Provider data struct
@@ -39,16 +39,20 @@ class RxGeneratorViewController: UIViewController, MFMessageComposeViewControlle
     @IBOutlet weak var PTPhone: UILabel!
     
     //Diagnosis list
+    @IBOutlet weak var ICDLabel1: UILabel!
+    @IBOutlet weak var ICDLabel2: UILabel!
+    @IBOutlet weak var ICDLabel3: UILabel!
+    
     @IBOutlet weak var dxLabel1: UILabel!
     @IBOutlet weak var dxLabel2: UILabel!
     @IBOutlet weak var dxLabel3: UILabel!
 
     
     //Prescription info
-    @IBOutlet var RxView: UIView!
+    //@IBOutlet var RxView: UIView!
     @IBOutlet weak var visits: UILabel!
     @IBOutlet weak var report: UILabel!
-    @IBOutlet weak var rxInstructions: UILabel!
+    //@IBOutlet weak var rxInstructions: UILabel!
     
     //Transmission buttons
     @IBOutlet weak var printRx: UIBarButtonItem!
